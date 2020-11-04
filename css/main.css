@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+   --moderate-violet: hsl(263, 55%, 52%);
+   --very-dark-grayish-blue: hsl(217, 19%, 35%);
+   --very-dark-blackish-blue: hsl(219, 29%, 14%);
+   --white: hsl(0, 0%, 100%);
+   --light-gray: hsl(0, 0%, 81%);
+   --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%; /* => 10px (10 / 16 * 100) */
+}
+
+body {
+   background-color: var(--light-grayish-blue);
+   font-family: "Barlow Semi Condensed", sans-serif;
+   font-weight: 500;
+   font-size: 1.3rem;
+   line-height: 1.5;
+   min-height: 100vh;
+   padding: 4rem 0;
+}
+
+.container {
+   width: 100%;
+   max-width: 114rem;
+   margin: 0 auto;
+   padding: 0 2rem;
+}
+
+.grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: 1fr auto;
+   gap: 3rem;
+}
+
+.card-testimonial {
+   padding: 3rem 3rem 4rem;
+   border-radius: 1rem;
+   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+}
+
+.card-testimonial .user {
+   display: flex;
+   align-items: center;
+}
+
+.card-testimonial .user-img {
+   width: 4rem;
+   height: 4rem;
+   border-radius: 50%;
+   border: 2px solid transparent;
+   margin-right: 2rem;
+}
+
+.card-testimonial .name {
+   font-size: 1.4rem;
+}
+
+.card-testimonial .status {
+   font-size: 1.3rem;
+   color: var(--light-gray);
+   opacity: 0.5;
+}
+
+.card-testimonial .title {
+   margin: 2rem 0;
+   line-height: 1.4;
+}
+
+.card-testimonial .review {
+   opacity: 0.7;
+}
+
+/* card blue */
+.card-testimonial-blue {
+   background-color: var(--moderate-violet);
+   color: var(--white);
+   position: relative;
+   grid-row: 1 / 2;
+   grid-column: 1 / 3;
+}
+
+.card-testimonial-blue .name {
+   color: var(--light-gray);
+}
+
+.card-testimonial-blue .user-img {
+   border-color: var(--light-gray);
+}
+
+.card-testimonial-blue .quote-img {
+   display: block;
+   position: absolute;
+   top: 0;
+   right: 5rem;
+   height: 8rem;
+}
+
+.card-testimonial-blue .title {
+   position: relative;
+   z-index: 1;
+}
+
+/* card-gray */
+.card-testimonial-gray {
+   background-color: var(--very-dark-grayish-blue);
+   color: var(--white);
+}
+
+.card-testimonial-gray .user-img {
+   border-color: var(--light-gray);
+}
+
+/* card-light */
+.card-testimonial-light {
+   background-color: var(--white);
+   color: var(--very-dark-grayish-blue);
+}
+
+.card-testimonial-light-1 {
+   grid-row: 2 / 3;
+   grid-column: 1 / 2;
+}
+
+.card-testimonial-light-2 {
+   grid-row: 1 / -1;
+   grid-column: 4 / -1;
+}
+
+.card-testimonial-light-2 .review {
+   word-spacing: 2px;
+}
+
+.card-testimonial-light .status {
+   color: var(--very-dark-grayish-blue);
+}
+
+.card-testimonial-light .user-img {
+   border-color: var(--light-grayish-blue);
+}
+
+/* card-dark */
+.card-testimonial-dark {
+   background-color: var(--very-dark-blackish-blue);
+   color: var(--light-gray);
+   grid-row: 2 / 3;
+   grid-column: 2 / 4;
+}
+
+.card-testimonial-dark .user-img {
+   border-color: var(--moderate-violet);
+}
+
+@media screen and (max-width: 1000px) {
+   .grid {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .card-testimonial-blue {
+      grid-row: 1 / 2;
+      grid-column: 1 / 3;
+   }
+
+   .card-testimonial-gray {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+   }
+
+   .card-testimonial-dark {
+      grid-row: 2 / 3;
+      grid-column: 2 / 4;
+   }
+
+   .card-testimonial-light-1 {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+   }
+
+   .card-testimonial-light-2 {
+      grid-row: 3 / 4;
+      grid-column: 1 / -1;
+   }
+
+   .card-testimonial .user-img {
+      margin-right: 1.5rem;
+   }
+}
+
+@media screen and (max-width: 755px) {
+   .grid {
+      grid-template-columns: 1fr;
+   }
+
+   .card-testimonial-blue {
+      grid-row: initial;
+      grid-column: initial;
+   }
+
+   .card-testimonial-gray {
+      grid-row: initial;
+      grid-column: initial;
+   }
+
+   .card-testimonial-dark {
+      grid-row: initial;
+      grid-column: initial;
+   }
+
+   .card-testimonial-light-1 {
+      grid-row: initial;
+      grid-column: initial;
+   }
+
+   .card-testimonial-light-2 {
+      grid-row: initial;
+      grid-column: initial;
+   }
+
+   .card-testimonial-light-2 .review {
+      word-spacing: initial;
+   }
+}
